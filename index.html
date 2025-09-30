@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Disruptive Designs</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome (LinkedIn icon) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- Google Material Symbols (Mail icon) -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=mail" />
+
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
         body {
@@ -12,7 +18,7 @@
         }
         .dark-theme {
             background-color: #0b0c10;
-            color: #d1d5db; /* A lighter gray for text */
+            color: #d1d5db;
         }
         .card {
             border: 1px solid rgba(255, 255, 255, 0.1);
@@ -23,15 +29,15 @@
             background-color: rgba(255, 255, 255, 0.06);
         }
         .highlight-text {
-            color: #34d399; /* A vibrant green for highlights */
+            color: #F04E3F;
         }
         .button-primary {
-            background-color: #10b981; /* Primary button green */
+            background-color: #F04E3F;
             color: white;
             transition: background-color 0.2s ease-in-out;
         }
         .button-primary:hover {
-            background-color: #059669; /* Darker green on hover */
+            background-color: #D43F34;
         }
         .button-secondary {
             border: 1px solid rgba(255, 255, 255, 0.15);
@@ -43,23 +49,54 @@
             background-color: rgba(255, 255, 255, 0.07);
         }
         .icon {
-            color: #34d399;
+            color: #F04E3F;
+        }
+        .navbar {
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .footer {
+            backdrop-filter: blur(20px);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
     </style>
 </head>
 <body class="dark-theme">
+
+    <!-- Navbar -->
+    <nav class="navbar bg-black/80">
+        <div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-3">
+                <a href="https://www.disruptive-designs.com/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 text-lg font-normal text-white">
+                    <img src="Images/Orange_Logo.png" alt="Calculate Your WorkFlow Logo" class="h-20 w-auto">
+                </a>
+                <div class="flex items-center gap-4">
+                <a href="https://www.disruptive-designs.com/new-index" class="text-white hover:bg-red-500/10 hover:text-red-400 text-lg font-normal transition-colors px-4 py-2 rounded-xl" target="_blank" rel="noopener noreferrer">
+                OUR PROCESS
+                </a>
+                <a href="https://www.disruptive-designs.com/offices" class="text-white hover:bg-red-500/10 hover:text-red-400 text-lg font-normal transition-colors px-4 py-2 rounded-xl" target="_blank" rel="noopener noreferrer">
+                WORK
+                </a>
+                <a href="https://www.disruptive-designs.com/contact-us" class="text-white hover:bg-red-500/10 hover:text-red-400 text-lg font-normal transition-colors px-4 py-2 rounded-xl" target="_blank" rel="noopener noreferrer">
+                CONTACT & LOCATION
+                </a>
+            </div>
+
+            </div>
+        </div>
+    </nav>
 
     <div id="pricing">
         <section class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
             <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between">
                 <h2 class="text-2xl sm:text-3xl font-bold mb-4 sm:mb-0">Transparent pricing</h2>
                 <div class="flex items-center gap-2 rounded-2xl border border-white/10 bg-white/[0.03] p-1">
-                    <button data-tier="hourly" class="px-3 py-1.5 text-sm rounded-xl bg-emerald-500 text-white">Hourly</button>
+                    <button data-tier="hourly" class="px-3 py-1.5 text-sm rounded-xl bg-red-500 text-white">Hourly</button>
                     <button data-tier="monthly" class="px-3 py-1.5 text-sm rounded-xl text-zinc-300 hover:bg-white/5">Monthly</button>
                 </div>
             </div>
             <div class="mt-8 grid md:grid-cols-3 gap-6" id="pricing-cards">
-                </div>
+            </div>
             <p class="mt-4 text-xs text-zinc-400">* Code checks by licensed partners where applicable.</p>
         </section>
     </div>
@@ -67,54 +104,74 @@
     <div id="roi">
         <section class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
             <div class="flex items-center gap-3">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-calculator h-5 w-5 text-emerald-400">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-calculator h-5 w-5 text-red-400">
                     <rect width="16" height="20" x="4" y="2" rx="2"/><line x1="8" x2="16" y1="6" y2="6"/><line x1="16" x2="16" y1="18" y2="18"/><line x1="16" x2="16" y1="14" y2="14"/><line x1="16" x2="16" y1="10" y2="10"/><line x1="12" x2="12" y1="18" y2="18"/><line x1="12" x2="12" y1="14" y2="14"/><line x1="12" x2="12" y1="10" y2="10"/><line x1="8" x2="8" y1="18" y2="18"/><line x1="8" x2="8" y1="14" y2="14"/><line x1="8" x2="8" y1="10" y2="10"/>
                 </svg>
                 <h2 class="text-2xl sm:text-3xl font-bold">ROI calculator</h2>
             </div>
             <p class="mt-2 text-zinc-300 text-sm">Estimate potential annual savings when outsourcing a CAD/BIM role.</p>
-        
             <div class="mt-6 grid md:grid-cols-2 gap-6">
                 <div class="rounded-2xl border border-white/10 bg-white/[0.03] p-6">
                     <div class="grid grid-cols-2 gap-4">
                         <label class="text-sm">
                             <div class="mb-1 text-zinc-300">In-house rate ($/hr)</div>
                             <div class="flex items-center gap-2">
-                                <input type="number" id="inhouseRate" value="55" min="20" max="200" class="w-full rounded-xl border border-white/10 bg-black/30 px-3 py-2 outline-none focus:ring-2 focus:ring-emerald-400/50 text-white">
+                                <input type="number" id="inhouseRate" value="55" min="20" max="200" class="w-full rounded-xl border border-white/10 bg-black/30 px-3 py-2 outline-none focus:ring-2 focus:ring-red-400/50 text-white">
                             </div>
-                            <input type="range" id="inhouseRateRange" value="55" min="20" max="200" class="mt-2 w-full accent-emerald-500">
+                            <input type="range" id="inhouseRateRange" value="55" min="20" max="200" class="mt-2 w-full accent-red-500">
                         </label>
                         <label class="text-sm">
                             <div class="mb-1 text-zinc-300">Outsource rate ($/hr)</div>
                             <div class="flex items-center gap-2">
-                                <input type="number" id="outsourceRate" value="28" min="10" max="150" class="w-full rounded-xl border border-white/10 bg-black/30 px-3 py-2 outline-none focus:ring-2 focus:ring-emerald-400/50 text-white">
+                                <input type="number" id="outsourceRate" value="28" min="10" max="150" class="w-full rounded-xl border border-white/10 bg-black/30 px-3 py-2 outline-none focus:ring-2 focus:ring-red-400/50 text-white">
                             </div>
-                            <input type="range" id="outsourceRateRange" value="28" min="10" max="150" class="mt-2 w-full accent-emerald-500">
+                            <input type="range" id="outsourceRateRange" value="28" min="10" max="150" class="mt-2 w-full accent-red-500">
                         </label>
                         <label class="text-sm">
                             <div class="mb-1 text-zinc-300">Monthly hours</div>
                             <div class="flex items-center gap-2">
-                                <input type="number" id="monthlyHours" value="160" min="40" max="240" class="w-full rounded-xl border border-white/10 bg-black/30 px-3 py-2 outline-none focus:ring-2 focus:ring-emerald-400/50 text-white">
+                                <input type="number" id="monthlyHours" value="160" min="40" max="240" class="w-full rounded-xl border border-white/10 bg-black/30 px-3 py-2 outline-none focus:ring-2 focus:ring-red-400/50 text-white">
                             </div>
-                            <input type="range" id="monthlyHoursRange" value="160" min="40" max="240" class="mt-2 w-full accent-emerald-500">
+                            <input type="range" id="monthlyHoursRange" value="160" min="40" max="240" class="mt-2 w-full accent-red-500">
                         </label>
                         <label class="text-sm">
                             <div class="mb-1 text-zinc-300">Efficiency gain (%)</div>
                             <div class="flex items-center gap-2">
-                                <input type="number" id="efficiencyGainPct" value="10" min="0" max="50" class="w-full rounded-xl border border-white/10 bg-black/30 px-3 py-2 outline-none focus:ring-2 focus:ring-emerald-400/50 text-white">
+                                <input type="number" id="efficiencyGainPct" value="10" min="0" max="50" class="w-full rounded-xl border border-white/10 bg-black/30 px-3 py-2 outline-none focus:ring-2 focus:ring-red-400/50 text-white">
                             </div>
-                            <input type="range" id="efficiencyGainPctRange" value="10" min="0" max="50" class="mt-2 w-full accent-emerald-500">
+                            <input type="range" id="efficiencyGainPctRange" value="10" min="0" max="50" class="mt-2 w-full accent-red-500">
                         </label>
                     </div>
                 </div>
                 <div class="rounded-2xl border border-white/10 bg-white/[0.03] p-6">
                     <div class="grid grid-cols-2 gap-4 text-sm" id="roi-stats">
-                        </div>
+                    </div>
                     <p class="mt-4 text-xs text-zinc-400">Estimates for comparison only, not a quote.</p>
                 </div>
             </div>
         </section>
     </div>
+
+    <!-- Footer -->
+    <footer class="footer bg-black/80">
+        <div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+            <div class="flex flex-col items-center justify-center gap-4">                                
+                <div class="flex gap-4">
+                    <!-- LinkedIn Icon (Font Awesome) -->
+                    <a href="https://www.linkedin.com/company/disruptive-designs/posts/?feedView=all" target="_blank" rel="noopener noreferrer" class="text-white hover:text-red-400 transition-colors text-xl">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+                    <!-- Email Icon (Material Symbols) -->
+                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=armughan@disruptive-designs.com&su=Inquiry%20from%20Website&body=Hi%20Armughan%2C%0A%0AI%20have%20a%20question%20about..." 
+                       target="_blank" 
+                       rel="noopener noreferrer" 
+                       class="text-white hover:text-red-400 transition-colors text-2xl">
+                        <span class="material-symbols-outlined">mail</span>
+                    </a>
+                </div>           
+            </div>
+        </div>
+    </footer>
 
     <script>
         // Data for the pricing cards
@@ -145,14 +202,14 @@
                     <ul class="mt-4 space-y-2 text-sm text-zinc-300">
                         ${plan.features.map(f => `
                             <li class="flex items-start gap-2">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check mt-0.5 h-4 w-4 text-emerald-400">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check mt-0.5 h-4 w-4 text-red-400">
                                     <path d="M20 6 9 17l-5-5"/>
                                 </svg>
                                 ${f}
                             </li>
                         `).join('')}
                     </ul>
-                    <a href="#contact" class="group inline-flex items-center gap-2 rounded-2xl bg-emerald-500 px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-emerald-500/20 hover:bg-emerald-400 focus:outline-none focus:ring-2 focus:ring-emerald-300 mt-6 w-full justify-center">
+                    <a href="#contact" class="group inline-flex items-center gap-2 rounded-2xl bg-red-500 px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-red-500/20 hover:bg-red-400 focus:outline-none focus:ring-2 focus:ring-red-300 mt-6 w-full justify-center">
                         Start with ${plan.name}
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right h-4 w-4 transition-transform group-hover:translate-x-0.5">
                             <path d="m9 18 6-6-6-6"/>
@@ -162,7 +219,6 @@
             `).join('');
         }
 
-        // Utility Functions for ROI Calculator
         function calculateROI(inhouseRate, outsourceRate, monthlyHours, efficiencyGainPct) {
             const eff = 1 + efficiencyGainPct / 100;
             const inAnnual = inhouseRate * monthlyHours * 12;
@@ -189,9 +245,9 @@
                     <div class="text-xs text-zinc-400">Annual outsourced</div>
                     <div class="mt-1 text-xl font-bold text-white">$${formatter.format(stats.outAnnual)}</div>
                 </div>
-                <div class="rounded-2xl border border-white/10 p-4 bg-emerald-500/10">
+                <div class="rounded-2xl border border-white/10 p-4 bg-red-500/10">
                     <div class="text-xs text-zinc-400">Estimated savings</div>
-                    <div class="mt-1 text-xl font-bold text-emerald-400">$${formatter.format(stats.savings)}</div>
+                    <div class="mt-1 text-xl font-bold text-red-400">$${formatter.format(stats.savings)}</div>
                 </div>
                 <div class="rounded-2xl border border-white/10 p-4 bg-white/[0.03]">
                     <div class="text-xs text-zinc-400">Savings %</div>
@@ -200,24 +256,21 @@
             `;
         }
 
-        // Event listeners for the calculator and pricing tabs
         document.addEventListener('DOMContentLoaded', () => {
-            // Pricing tabs logic
             const pricingTabs = document.querySelectorAll('#pricing [data-tier]');
             pricingTabs.forEach(tab => {
                 tab.addEventListener('click', () => {
                     pricingTabs.forEach(t => {
-                        t.classList.remove('bg-emerald-500', 'text-white');
+                        t.classList.remove('bg-red-500', 'text-white');
                         t.classList.add('text-zinc-300', 'hover:bg-white/5');
                     });
-                    tab.classList.add('bg-emerald-500', 'text-white');
+                    tab.classList.add('bg-red-500', 'text-white');
                     tab.classList.remove('text-zinc-300', 'hover:bg-white/5');
                     renderPricing(tab.dataset.tier);
                 });
             });
-            renderPricing('hourly'); // Initial render of pricing cards
+            renderPricing('hourly');
 
-            // ROI Calculator logic
             const inputs = ['inhouseRate', 'outsourceRate', 'monthlyHours', 'efficiencyGainPct'];
             inputs.forEach(id => {
                 const input = document.getElementById(id);
@@ -231,9 +284,8 @@
                     updateROIStats();
                 });
             });
-            updateROIStats(); // Initial calculation on page load
+            updateROIStats();
         });
     </script>
-
 </body>
 </html>
