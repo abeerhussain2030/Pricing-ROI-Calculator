@@ -6,328 +6,316 @@
     <title>Disruptive Designs</title>
 
     <script src="https://cdn.tailwindcss.com"></script>
+    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=mail" />
 
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
-        body { font-family: 'Inter', sans-serif; }
 
-        .dark-theme { background-color: #0b0c10; color: #d1d5db; }
-        .navbar, .footer { backdrop-filter: blur(20px); }
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .dark-theme {
+            background-color: #0b0c10;
+            color: #d1d5db;
+        }
+
+        .card {
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background-color: rgba(255, 255, 255, 0.03);
+            transition: all 0.2s ease-in-out;
+        }
+
+        .card:hover {
+            background-color: rgba(255, 255, 255, 0.06);
+        }
+
+        .button-primary {
+            background-color: #F04E3F;
+            color: white;
+            transition: background-color 0.2s ease-in-out;
+        }
+
+        .button-primary:hover {
+            background-color: #D43F34;
+        }
+
+        .icon {
+            color: #F04E3F;
+        }
+
+        .navbar,
+        .footer {
+            backdrop-filter: blur(20px);
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+
+        form#projectForm {
+            border: 1.5px solid rgba(255, 255, 255, 0.2);
+            background-color: rgba(255, 255, 255, 0.05);
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 2px 6px rgba(240, 78, 63, 0.1);
+        }
+
+        form#projectForm label {
+            font-weight: 600;
+            color: #F04E3F;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        form#projectForm input,
+        form#projectForm select,
+        form#projectForm textarea {
+            border: 1.5px solid rgba(255, 255, 255, 0.3);
+            background-color: rgba(0,0,0,0.25);
+            color: #fff;
+            padding: 0.75rem 1rem;
+            border-radius: 0.75rem;
+            width: 100%;
+            margin-bottom: 1rem;
+        }
+
+        form#projectForm input:focus,
+        form#projectForm select:focus,
+        form#projectForm textarea:focus {
+            border-color: #F04E3F;
+            outline: none;
+            background-color: rgba(0,0,0,0.4);
+        }
     </style>
 </head>
 
 <body class="dark-theme">
 
-    <!-- Navbar -->
-    <nav class="navbar bg-black/80 border-b border-white/10">
-        <div class="w-full max-w-7xl mx-auto px-4 lg:px-8">
-            <div class="flex justify-between items-center py-3">
-                <a href="https://www.disruptive-designs.com/" target="_blank" class="flex items-center gap-3 text-lg text-white">
-                    <img src="Images/Orange_Logo.png" alt="Logo" class="h-20 w-auto" />
-                </a>
+<nav class="navbar bg-black/80 border-b border-white/10">
+    <div class="w-full max-w-7xl mx-auto px-4 py-3 flex justify-center">
+        <img src="Images/Orange_Logo.png" alt="Logo" class="h-20" />
+    </div>
+</nav>
 
-                <div class="flex items-center gap-4">
-                    <a href="https://www.disruptive-designs.com/new-index" target="_blank" class="nav-link">OUR PROCESS</a>
-                    <a href="https://www.disruptive-designs.com/offices" target="_blank" class="nav-link">WORK</a>
-                    <a href="https://www.disruptive-designs.com/contact-us" target="_blank" class="nav-link">CONTACT & LOCATION</a>
-                </div>
+<section class="w-full max-w-7xl mx-auto px-4 py-16">
+    <h2 class="text-2xl sm:text-3xl font-bold mb-8">Transparent pricing</h2>
+    <div class="mt-8 grid md:grid-cols-3 gap-6" id="pricing-cards"></div>
+</section>
+
+<section class="w-full max-w-7xl mx-auto px-4 py-16">
+  <h2 class="text-2xl sm:text-3xl font-bold mb-8">LumpSum Details</h2>
+  <form id="projectForm" autocomplete="off" class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 p-6 card rounded-2xl">
+    
+    <div class="flex flex-col gap-4">
+      <div>
+        <label for="fullName">Full Name <sup>*</sup></label>
+        <input type="text" id="fullName" name="fullName" placeholder="Your full name" required />
+      </div>
+      <div>
+        <label for="email">Email <sup>*</sup></label>
+        <input type="email" id="email" name="email" placeholder="you@example.com" required />
+      </div>
+      <div>
+        <label for="projectSize">Project Size <sup>*</sup></label>
+        <select id="projectSize" name="projectSize" required>
+          <option style="color: #0b0c10;background-color: #fff;" value="" disabled selected>Select an option</option>
+          <option style="color: #0b0c10;background-color: #fff;" value="0 - 3000 SQFT">0 - 3000 SQFT</option>
+          <option style="color: #0b0c10;background-color: #fff;" value="3000 - 10,000 SQFT">3000 - 10,000 SQFT</option>
+          <option style="color: #0b0c10;background-color: #fff;" value="+10,000 SQFT">+10,000 SQFT</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="flex flex-col gap-4">
+      <div>
+        <label for="projectDescription">Project Description <sup>*</sup></label>
+        <textarea id="projectDescription" name="projectDescription" placeholder="Describe your project" required rows="5"></textarea>
+      </div>
+      <div>
+        <label for="referenceFile">Reference Type (Attachment)</label>
+        <input type="file" id="referenceFile" name="referenceFile" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png,.zip" />
+      </div>
+      <div class="flex justify-end mt-auto">
+        <button type="submit" class="button-primary px-8 py-3 rounded-full font-bold">Compose Email</button>
+      </div>
+    </div>
+  </form>
+</section>
+
+<section class="w-full max-w-7xl mx-auto px-4 py-16">
+    <h2 class="text-2xl sm:text-3xl font-bold">ROI calculator</h2>
+    <p class="mt-2 text-zinc-300 text-sm">Estimate potential annual savings when outsourcing a CAD/BIM role.</p>
+
+    <div class="mt-6 grid md:grid-cols-2 gap-6">
+        <div class="card rounded-2xl p-6">
+            <div class="grid grid-cols-2 gap-4">
+                <label class="text-sm">
+                    <div class="mb-1 text-zinc-300">In-house rate ($/hr)</div>
+                    <input type="number" id="inhouseRate" value="55" min="20" max="200" class="w-full rounded-xl border border-white/10 bg-black/30 px-3 py-2 text-white">
+                    <input type="range" id="inhouseRateRange" value="55" min="20" max="200" class="mt-2 w-full accent-red-500">
+                </label>
+                <label class="text-sm">
+                    <div class="mb-1 text-zinc-300">Outsource rate ($/hr)</div>
+                    <input type="number" id="outsourceRate" value="28" min="10" max="150" class="w-full rounded-xl border border-white/10 bg-black/30 px-3 py-2 text-white">
+                    <input type="range" id="outsourceRateRange" value="28" min="10" max="150" class="mt-2 w-full accent-red-500">
+                </label>
+                <label class="text-sm col-span-2">
+                    <div class="mb-1 text-zinc-300">Monthly hours</div>
+                    <input type="number" id="monthlyHours" value="160" min="40" max="240" class="w-full rounded-xl border border-white/10 bg-black/30 px-3 py-2 text-white">
+                    <input type="range" id="monthlyHoursRange" value="160" min="40" max="240" class="mt-2 w-full accent-red-500">
+                </label>
             </div>
         </div>
-    </nav>
 
-    <style>
-        .nav-link {
-            color: white;
-            font-size: 1.1rem;
-            padding: 0.5rem 1rem;
-            border-radius: 0.75rem;
-            transition: all .2s;
-        }
-        .nav-link:hover {
-            background: rgba(255, 0, 0, 0.1);
-            color: #f87171;
-        }
-    </style>
-
-    <!-- Pricing Section -->
-    <div id="pricing">
-        <section class="w-full max-w-7xl mx-auto px-4 lg:px-8 py-16">
-
-            <h2 class="text-3xl font-bold mb-10 text-white">Transparent pricing</h2>
-
-            <!-- Hourly -->
-            <div class="mb-16">
-                <div class="flex items-center gap-3 mb-6">
-                    <span class="bg-red-500 text-white text-xs font-bold px-2 py-1 rounded uppercase">Hourly</span>                    
-                </div>
-                <div class="grid md:grid-cols-3 gap-6" id="hourly-cards-container"></div>
-            </div>
-
-            <!-- Monthly -->
-            <div>
-                <div class="flex items-center gap-3 mb-6">
-                    <span class="bg-red-500 text-white text-xs font-bold px-2 py-1 rounded uppercase">Lump Sum</span>                    
-                </div>
-                <div class="grid md:grid-cols-3 gap-6" id="monthly-cards-container"></div>
-            </div>
-
-        </section>
+        <div class="card rounded-2xl p-6">
+            <div class="grid grid-cols-2 gap-4 text-sm" id="roi-stats"></div>
+            <p class="mt-4 text-xs text-zinc-400">Estimates for comparison only, not a quote.</p>
+        </div>
     </div>
+</section>
 
-    <!-- ROI Section -->
-    <div id="roi">
-        <section class="w-full max-w-7xl mx-auto px-4 lg:px-8 py-16 pt-0">
-
-            <div class="border-t border-white/10 pt-16">
-
-                <div class="flex items-center gap-3">
-                    <i class="fa-solid fa-calculator text-red-400 text-xl"></i>
-                    <h2 class="text-3xl font-bold">ROI calculator</h2>
-                </div>
-
-                <p class="mt-2 text-zinc-300 text-sm">Estimate potential annual savings when outsourcing a CAD/BIM role.</p>
-
-                <div class="mt-6 grid md:grid-cols-2 gap-6">
-
-                    <!-- Left Panel -->
-                    <div class="rounded-2xl border border-white/10 bg-white/[0.03] p-6 grid grid-cols-2 gap-4">
-
-                        <label class="text-sm">
-                            <p class="mb-1 text-zinc-300">In-house rate ($/hr)</p>
-                            <input type="number" id="inhouseRate" value="55" class="input-box">
-                            <input type="range" id="inhouseRateRange" value="55" min="20" max="200" class="slider">
-                        </label>
-
-                        <label class="text-sm">
-                            <p class="mb-1 text-zinc-300">Outsource rate ($/hr)</p>
-                            <input type="number" id="outsourceRate" value="28" class="input-box">
-                            <input type="range" id="outsourceRateRange" value="28" min="10" max="150" class="slider">
-                        </label>
-
-                        <label class="text-sm">
-                            <p class="mb-1 text-zinc-300">Monthly hours</p>
-                            <input type="number" id="monthlyHours" value="160" class="input-box">
-                            <input type="range" id="monthlyHoursRange" value="160" min="40" max="240" class="slider">
-                        </label>
-
-                        <label class="text-sm">
-                            <p class="mb-1 text-zinc-300">Efficiency gain (%)</p>
-                            <input type="number" id="efficiencyGainPct" value="10" class="input-box">
-                            <input type="range" id="efficiencyGainPctRange" value="10" min="0" max="50" class="slider">
-                        </label>
-
-                    </div>
-
-                    <!-- Right Panel -->
-                    <div class="rounded-2xl border border-white/10 bg-white/[0.03] p-6">
-                        <div class="grid grid-cols-2 gap-4 text-sm" id="roi-stats"></div>
-                        <p class="mt-4 text-xs text-zinc-400">Estimates for comparison only, not a quote.</p>
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-    </div>
-
-    <!-- Footer -->
 <footer class="footer bg-black/80 border-t border-white/10">
-    <div class="w-full max-w-7xl mx-auto px-4 lg:px-8 py-6">
-        <div class="flex flex-col items-center gap-4">
-            <div class="flex gap-4">
-                <!-- LinkedIn Icon -->
-                <a href="https://www.linkedin.com/company/disruptive-designs/posts/?feedView=all" 
-                   target="_blank" 
-                   rel="noopener noreferrer" 
-                   class="text-white hover:text-red-400 text-xl">
+    <div class="w-full max-w-7xl mx-auto px-4 py-6">    
+        <div class="flex flex-col items-center justify-center gap-4">                                
+            <div class="flex gap-4 items-center">
+                
+                <!-- LinkedIn -->
+                <a href="https://www.linkedin.com/company/disruptive-designs/posts/?feedView=all"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="text-white hover:text-red-400 transition-colors text-xl flex items-center justify-center">
                     <i class="fa-brands fa-linkedin-in"></i>
                 </a>
 
-                <!-- Mail Icon -->
-                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=armughan@disruptive-designs.com&su=Inquiry%20from%20Website&body=Hi%20Armughan,%0A%0AI%20have%20a%20question%20about..." 
-                   target="_blank" 
-                   rel="noopener noreferrer" 
-                   class="text-white hover:text-red-400 text-2xl">
+                <!-- Email -->
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=abeerdisruptivedesigns@gmail.com&su=Inquiry%20from%20Website&body=Hi%20Abeer%2C%0A%0AI%20have%20a%20question%20about..."
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="text-white hover:text-red-400 transition-colors text-xl flex items-center justify-center">
                     <i class="fa-solid fa-envelope"></i>
                 </a>
-            </div>
+
+            </div>           
         </div>
     </div>
 </footer>
 
-    <style>
-        .input-box {
-            width: 100%;
-            background: #00000030;
-            border: 1px solid rgba(255,255,255,0.1);
-            padding: .5rem .75rem;
-            border-radius: .75rem;
-            outline: none;
-            color: white;
-        }
-        .input-box:focus { box-shadow: 0 0 0 2px #f8717133; }
-        .slider { width: 100%; accent-color: #ef4444; }
-    </style>
 
-    <script>
-        const pricing = {
-            hourly: [
-                {
-                    price: "$30–40",
-                    title: "Architectural Documentation",
-                    features: ["Permit Set", "Construction Documents", "Technical Drawings"],
-                    cta: "Start Your Project",
-                },
-                {
-                    price: "$35–40",
-                    title: "BIM Modeler",
-                    features: ["LOD 300-350", "Families", "Coordination"],
-                    cta: "Start Your Project",
-                },
-                {
-                    price: "$300-800",
-                    title: "3D Visualization",
-                    features: ["Cost depends on the quantity and type of renders interior or exterior."],
-                    cta: "Start Your Project",
-                },
-            ],
-            monthly: [
-                {
-                    price: "$3,200",
-                    title: "Package 01",
-                    features: ["2 week project", "160 working hours"],
-                    cta: "Start Your Project",
-                },
-                {
-                    price: "$3,600",
-                    title: "Package 02",
-                    features: ["6 week project", "480 working hours"],
-                    cta: "Start Your Project",
-                },
-                {
-                    price: "$3,800",
-                    title: "Package 03",
-                    features: ["10 week project", "800 working hours"],
-                    cta: "Start Your Project",
-                },
-            ],
-        };
+<script>
+    const pricing = {
+        hourly: [
+            { 
+                price: "$30–40", 
+                title: "Architectural Documentation", 
+                features: ["Permit Set", "Construction Documents", "Technical Drawings"], 
+                cta: "Start Your Project",
+                subject: "Inquiry Regarding Permit Set, Construction Documents, and Technical Drawings",
+                body: "Dear Abeer,\n\nI hope this message finds you well.\n\nI am reaching out to inquire about the availability and scope of your services related to:\n\n- Permit Set\n- Construction Documents\n- Technical Drawings\n\nCould you please provide details regarding the process, deliverables, timelines, and pricing for these services? Additionally, I would appreciate any sample documents or portfolios you may be able to share.\n\nLooking forward to your response.\n\nBest regards,"
+            },
+            { 
+                price: "$35–43", 
+                title: "BIM Modeler", 
+                features: ["LOD 300-350", "Families", "Coordination"], 
+                cta: "Start Your Project",
+                subject: "Inquiry Regarding BIM Modeling Services",
+                body: "Dear Abeer,\n\nI hope this email finds you well.\n\nI am reaching out to inquire about your BIM modeling services. Specifically, I would like to understand:\n\n- The scope of BIM modeling you provide (Revit, ArchiCAD, etc.)\n- Deliverables and file formats\n- Project timelines and availability\n- Pricing structure\n\nIf possible, please also share any sample models or portfolios showcasing your work.\n\nI look forward to your response and the possibility of collaborating.\n\nBest regards,"
+            },
+            { 
+                price: "$300–800", 
+                title: "3D Visualization", 
+                features: ["Quantity of views", "Interior or Exterior", "Project based"], 
+                cta: "Start Your Project",
+                subject: "Inquiry About 3D Visualization Services",
+                body: "Dear Abeer,\n\nI hope this email finds you well.\n\nI am reaching out to inquire about your 3D visualization services. I am particularly interested in understanding:\n\n- The process and scope of your 3D rendering services (interior and exterior)\n- Deliverables and file formats\n- Pricing structure, keeping in mind that costs depend on the quantity and type of renders required\n- Project timelines and availability\n\nIf possible, please also share any sample renders or portfolios showcasing your previous work.\n\nLooking forward to your response.\n\nBest regards,"
+            }
+        ]
+    };
 
-        const formatter = new Intl.NumberFormat("en-US");
-
-        function renderSpecificSection(tier, id) {
-            const container = document.getElementById(id);
-            container.innerHTML = pricing[tier].map(plan => {
-                const emailSubject = encodeURIComponent(`Inquiry Regarding ${plan.features.join(", ")}`);
-                const emailBody = encodeURIComponent(
-`Hi Armughan,
-
-I hope this message finds you well.
-
-I am reaching out to inquire about the availability and scope of your services related to:
-
-${plan.features.join("\n")}
-
-Could you please provide details regarding the process, deliverables, timelines, and pricing for these services? Additionally, I would appreciate any sample documents or portfolios you may be able to share.
-
-Looking forward to your response.
-
-Thank you for your time and assistance.
-
-Best regards,`
-                );
-                const mailtoLink = `https://mail.google.com/mail/?view=cm&fs=1&to=armughan@disruptive-designs.com&su=${emailSubject}&body=${emailBody}`;
-
-                return `
-                    <div class="flex flex-col h-full rounded-2xl border border-white/10
-                                bg-gradient-to-b from-white/[0.06] to-white/[0.02]
-                                p-7 shadow-xl hover:shadow-red-500/10 transition
-                                justify-between">
-
-                        <div class="flex flex-col flex-1">
-                            <div class="flex items-end gap-1 mb-4">
-                                <span class="text-4xl font-extrabold text-white">${typeof plan.price === "number" ? "$"+plan.price : plan.price}</span>
-                                <span class="text-sm text-zinc-400 mb-1">${tier==="hourly"?"/hr":""}</span>
-                            </div>
-
-                            <h3 class="text-xl font-semibold text-white mb-5">${plan.title}</h3>
-
-                            <ul class="space-y-3 text-sm text-zinc-300 flex-1">
-                                ${plan.features.map(f => `
-                                    <li class="flex items-center gap-3">
-                                        <i class="fa-solid fa-check text-red-400"></i>${f}
-                                    </li>`).join("")}
-                            </ul>
-                        </div>
-
-                        <a href="${mailtoLink}" target="_blank"
-                            class="mt-6 group inline-flex items-center justify-center gap-2
-                                   rounded-xl bg-red-500 px-5 py-3 text-sm font-semibold text-white
-                                   hover:bg-red-400 transition">
-                            ${plan.cta}
-                            <i class="fa-solid fa-chevron-right"></i>
-                        </a>
-                    </div>
-                `;
-            }).join("");
-        }
-
-        function calculateROI(inhouseRate, outsourceRate, monthlyHours, efficiencyGainPct) {
-            const eff = 1 + efficiencyGainPct / 100;
-            const inAnnual = inhouseRate * monthlyHours * 12;
-            const outAnnual = outsourceRate * monthlyHours * 12 * (1 / eff);
-            const savings = Math.max(0, inAnnual - outAnnual);
-            const savingPct = Math.round((savings / inAnnual) * 100);
-            return { inAnnual, outAnnual, savings, savingPct };
-        }
-
-        function updateROIStats() {
-            const inhouseRate = +document.getElementById("inhouseRate").value;
-            const outsourceRate = +document.getElementById("outsourceRate").value;
-            const monthlyHours = +document.getElementById("monthlyHours").value;
-            const efficiencyGainPct = +document.getElementById("efficiencyGainPct").value;
-
-            const stats = calculateROI(inhouseRate, outsourceRate, monthlyHours, efficiencyGainPct);
-
-            document.getElementById("roi-stats").innerHTML = `
-                <div class="rounded-2xl border border-white/10 p-4 bg-white/[0.03]">
-                    <p class="text-xs text-zinc-400">Annual in-house</p>
-                    <p class="mt-1 text-xl font-bold text-white">$${formatter.format(stats.inAnnual)}</p>
-                </div>
-
-                <div class="rounded-2xl border border-white/10 p-4 bg-white/[0.03]">
-                    <p class="text-xs text-zinc-400">Annual outsourced</p>
-                    <p class="mt-1 text-xl font-bold text-white">$${formatter.format(stats.outAnnual)}</p>
-                </div>
-
-                <div class="rounded-2xl border border-white/10 p-4 ">
-                    <p class="text-xs text-green-400">Estimated savings</p>
-                    <p class="mt-1 text-xl font-bold text-green-400">$${formatter.format(stats.savings)}</p>
-                </div>
-
-                <div class="rounded-2xl border border-white/10 p-4 ">
-                    <p class="text-xs text-green-400">Savings %</p>
-                    <p class="mt-1 text-xl font-bold text-green-400">${stats.savingPct}%</p>
+    function renderPricing() {
+        const targetEmail = "abeerdisruptivedesigns@gmail.com";
+        document.getElementById('pricing-cards').innerHTML = pricing.hourly.map(plan => {
+            const mailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${targetEmail}&su=${encodeURIComponent(plan.subject)}&body=${encodeURIComponent(plan.body)}`;
+            
+            return `
+                <div class="card rounded-2xl p-6 flex flex-col h-full">
+                    <div class="text-3xl font-extrabold text-white">${plan.price}</div>
+                    <h3 class="text-lg font-semibold mt-2">${plan.title}</h3>
+                    <ul class="mt-4 space-y-2 text-sm text-zinc-300 flex-grow">
+                        ${plan.features.map(f => `<li class="flex items-start gap-2"><span class="icon">✔</span>${f}</li>`).join('')}
+                    </ul>
+                    <a href="${mailUrl}" target="_blank" class="button-primary mt-6 w-full inline-flex justify-center rounded-2xl px-5 py-2.5 text-sm font-semibold">
+                        ${plan.cta}
+                    </a>
                 </div>
             `;
-        }
+        }).join('');
+    }
 
-        document.addEventListener("DOMContentLoaded", () => {
-            renderSpecificSection("hourly", "hourly-cards-container");
-            renderSpecificSection("monthly", "monthly-cards-container");
+    function updateROIStats() {
+        const ih = +document.getElementById('inhouseRate').value;
+        const oh = +document.getElementById('outsourceRate').value;
+        const mh = +document.getElementById('monthlyHours').value;
+        
+        const inAnnual = ih * mh * 12;
+        const outAnnual = oh * mh * 12;
+        const savings = Math.max(0, inAnnual - outAnnual);
+        const savingPct = inAnnual ? Math.round((savings / inAnnual) * 100) : 0;
+        const f = new Intl.NumberFormat('en-US');
 
-            ["inhouseRate","outsourceRate","monthlyHours","efficiencyGainPct"].forEach(id=>{
-                const input=document.getElementById(id);
-                const range=document.getElementById(id+"Range");
-                input.addEventListener("input",()=>{range.value=input.value;updateROIStats();});
-                range.addEventListener("input",()=>{input.value=range.value;updateROIStats();});
+        document.getElementById('roi-stats').innerHTML = `
+            <div class="card rounded-2xl p-4">
+                <div class="text-xs text-zinc-400">Annual in-house</div>
+                <div class="mt-1 text-xl font-bold">$${f.format(inAnnual)}</div>
+            </div>
+            <div class="card rounded-2xl p-4">
+                <div class="text-xs text-zinc-400">Annual outsourced</div>
+                <div class="mt-1 text-xl font-bold">$${f.format(outAnnual)}</div>
+            </div>
+            <div class="card rounded-2xl p-4">
+                <div class="text-xs text-green-400">Estimated savings</div>
+                <div class="mt-1 text-xl font-bold text-green-400">$${f.format(savings)}</div>
+            </div>
+            <div class="card rounded-2xl p-4">
+                <div class="text-xs text-green-400">Savings %</div>
+                <div class="mt-1 text-xl font-bold text-green-400">${savingPct}%</div>
+            </div>
+        `;
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        renderPricing();
+        updateROIStats();
+        ['inhouseRate', 'outsourceRate', 'monthlyHours'].forEach(id => {
+            const input = document.getElementById(id);
+            const range = document.getElementById(id + 'Range');
+            if(input) input.addEventListener('input', updateROIStats);
+            if(range) range.addEventListener('input', e => {
+                document.getElementById(id).value = e.target.value;
+                updateROIStats();
             });
-
-            updateROIStats();
         });
-    </script>
+
+        const projectForm = document.getElementById("projectForm");
+        if(projectForm) {
+            projectForm.addEventListener("submit", function (e) {
+                e.preventDefault();
+                const fullName = document.getElementById('fullName').value;
+                const userEmail = document.getElementById('email').value;
+                const projectSize = document.getElementById('projectSize').value;
+                const description = document.getElementById('projectDescription').value;
+                const targetEmail = "abeerdisruptivedesigns@gmail.com";
+                const subject = encodeURIComponent(`LumpSum Project Inquiry: ${fullName}`);
+                const body = encodeURIComponent(
+                    `Hi Abeer,\n\nYou have received a new project inquiry via the website form.\n\n` +
+                    `--- CLIENT DETAILS ---\nName: ${fullName}\nEmail: ${userEmail}\nProject Size: ${projectSize}\n\n` +
+                    `--- PROJECT DESCRIPTION ---\n${description}\n\nNote: If I selected a file, it is attached to this email.`
+                );
+                window.open(`https://mail.google.com/mail/?view=cm&fs=1&to=${targetEmail}&su=${subject}&body=${body}`, '_blank');
+            });
+        }
+    });
+</script>
 
 </body>
 </html>
