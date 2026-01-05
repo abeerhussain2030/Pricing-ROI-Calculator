@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Disruptive Designs</title>
+      <link rel="icon" type="image/x-icon" href="Images/Orange Brand Mark.png">
+
 
     <script src="https://cdn.tailwindcss.com"></script>
     <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
@@ -189,7 +191,7 @@
                 </a>
 
                 <!-- Email -->
-                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=abeerdisruptivedesigns@gmail.com&su=Inquiry%20from%20Website&body=Hi%20Abeer%2C%0A%0AI%20have%20a%20question%20about..."
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=armughan@disruptive-designs.com&su=Inquiry%20from%20Website&body=Hi%20Armughan%2C%0A%0AI%20have%20a%20question%20about..."
                    target="_blank"
                    rel="noopener noreferrer"
                    class="text-white hover:text-red-400 transition-colors text-xl flex items-center justify-center">
@@ -211,7 +213,7 @@
                 features: ["Permit Set", "Construction Documents", "Technical Drawings"], 
                 cta: "Start Your Project",
                 subject: "Inquiry Regarding Permit Set, Construction Documents, and Technical Drawings",
-                body: "Dear Abeer,\n\nI hope this message finds you well.\n\nI am reaching out to inquire about the availability and scope of your services related to:\n\n- Permit Set\n- Construction Documents\n- Technical Drawings\n\nCould you please provide details regarding the process, deliverables, timelines, and pricing for these services? Additionally, I would appreciate any sample documents or portfolios you may be able to share.\n\nLooking forward to your response.\n\nBest regards,"
+                body: "Dear Armughan,\n\nI hope this message finds you well.\n\nI am reaching out to inquire about the availability and scope of your services related to:\n\n- Permit Set\n- Construction Documents\n- Technical Drawings\n\nCould you please provide details regarding the process, deliverables, timelines, and pricing for these services? Additionally, I would appreciate any sample documents or portfolios you may be able to share.\n\nLooking forward to your response.\n\nBest regards,"
             },
             { 
                 price: "$35–43", 
@@ -219,7 +221,7 @@
                 features: ["LOD 300-350", "Families", "Coordination"], 
                 cta: "Start Your Project",
                 subject: "Inquiry Regarding BIM Modeling Services",
-                body: "Dear Abeer,\n\nI hope this email finds you well.\n\nI am reaching out to inquire about your BIM modeling services. Specifically, I would like to understand:\n\n- The scope of BIM modeling you provide (Revit, ArchiCAD, etc.)\n- Deliverables and file formats\n- Project timelines and availability\n- Pricing structure\n\nIf possible, please also share any sample models or portfolios showcasing your work.\n\nI look forward to your response and the possibility of collaborating.\n\nBest regards,"
+                body: "Dear Armughan,\n\nI hope this email finds you well.\n\nI am reaching out to inquire about your BIM modeling services. Specifically, I would like to understand:\n\n- The scope of BIM modeling you provide (Revit, ArchiCAD, etc.)\n- Deliverables and file formats\n- Project timelines and availability\n- Pricing structure\n\nIf possible, please also share any sample models or portfolios showcasing your work.\n\nI look forward to your response and the possibility of collaborating.\n\nBest regards,"
             },
             { 
                 price: "$300–800", 
@@ -227,13 +229,13 @@
                 features: ["Number of views", "Type Of Render", "Project Based"], 
                 cta: "Start Your Project",
                 subject: "Inquiry About 3D Visualization Services",
-                body: "Dear Abeer,\n\nI hope this email finds you well.\n\nI am reaching out to inquire about your 3D visualization services. I am particularly interested in understanding:\n\n- The process and scope of your 3D rendering services (interior and exterior)\n- Deliverables and file formats\n- Pricing structure, keeping in mind that costs depend on the quantity and type of renders required\n- Project timelines and availability\n\nIf possible, please also share any sample renders or portfolios showcasing your previous work.\n\nLooking forward to your response.\n\nBest regards,"
+                body: "Dear Armughan,\n\nI hope this email finds you well.\n\nI am reaching out to inquire about your 3D visualization services. I am particularly interested in understanding:\n\n- The process and scope of your 3D rendering services (interior and exterior)\n- Deliverables and file formats\n- Pricing structure, keeping in mind that costs depend on the quantity and type of renders required\n- Project timelines and availability\n\nIf possible, please also share any sample renders or portfolios showcasing your previous work.\n\nLooking forward to your response.\n\nBest regards,"
             }
         ]
     };
 
     function renderPricing() {
-        const targetEmail = "abeerdisruptivedesigns@gmail.com";
+        const targetEmail = "armughan@disruptive-designs.com";
         document.getElementById('pricing-cards').innerHTML = pricing.hourly.map(plan => {
             const mailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${targetEmail}&su=${encodeURIComponent(plan.subject)}&body=${encodeURIComponent(plan.body)}`;
             
@@ -304,10 +306,10 @@
                 const userEmail = document.getElementById('email').value;
                 const projectSize = document.getElementById('projectSize').value;
                 const description = document.getElementById('projectDescription').value;
-                const targetEmail = "abeerdisruptivedesigns@gmail.com";
+                const targetEmail = "armughan@disruptive-designs.com";
                 const subject = encodeURIComponent(`LumpSum Project Inquiry: ${fullName}`);
                 const body = encodeURIComponent(
-                    `Hi Abeer,\n\nYou have received a new project inquiry via the website form.\n\n` +
+                    `Hi Armughan,\n\nYou have received a new project inquiry via the website form.\n\n` +
                     `--- CLIENT DETAILS ---\nName: ${fullName}\nEmail: ${userEmail}\nProject Size: ${projectSize}\n\n` +
                     `--- PROJECT DESCRIPTION ---\n${description}\n\nNote: If I selected a file, it is attached to this email.`
                 );
