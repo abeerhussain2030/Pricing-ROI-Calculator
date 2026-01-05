@@ -4,8 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Disruptive Designs</title>
-      <link rel="icon" type="image/x-icon" href="Images/Orange Brand Mark.png">
-
+    <link rel="icon" type="image/x-icon" href="Images/Orange Brand Mark.png">
 
     <script src="https://cdn.tailwindcss.com"></script>
     <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
@@ -89,25 +88,60 @@
             outline: none;
             background-color: rgba(0,0,0,0.4);
         }
+
+        /* MOBILE SPECIFIC */
+        @media (max-width: 640px) {
+            form#projectForm input,
+            form#projectForm select,
+            form#projectForm textarea {
+                font-size: 0.95rem;
+                padding: 0.65rem 0.8rem;
+            }
+
+            form#projectForm label {
+                font-size: 0.85rem;
+            }
+
+            .navbar img {
+                height: 56px;
+            }
+
+            section h2 {
+                font-size: 1.25rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .button-primary {
+                width: 100%;
+            }
+
+            #roi-stats {
+                grid-template-columns: 1fr !important;
+            }
+
+            .card p, .card li {
+                font-size: 0.9rem;
+            }
+        }
     </style>
 </head>
 
 <body class="dark-theme">
 
 <nav class="navbar bg-black/80 border-b border-white/10">
-    <div class="w-full max-w-7xl mx-auto px-4 py-3 flex justify-center">
-        <img src="Images/Orange_Logo.png" alt="Logo" class="h-20" />
+    <div class="w-full max-w-7xl mx-auto px-4 py-2 sm:py-3 flex justify-center">
+        <img src="Images/Orange_Logo.png" alt="Logo" class="h-14 sm:h-20" />
     </div>
 </nav>
 
-<section class="w-full max-w-7xl mx-auto px-4 py-16">
-    <h2 class="text-2xl sm:text-3xl font-bold mb-8">Transparent Pricing</h2>    
+<section class="w-full max-w-7xl mx-auto px-4 py-10 sm:py-16">
+    <h2 class="text-xl sm:text-2xl md:text-3xl font-bold mb-6 sm:mb-8">Transparent Pricing</h2>    
     <div class="mt-8 grid md:grid-cols-3 gap-6" id="pricing-cards"></div>
 </section>
 
-<section class="w-full max-w-7xl mx-auto px-4 py-16">
-  <h2 class="text-2xl sm:text-3xl font-bold mb-8">LumpSum Inquiry</h2>
-  <form id="projectForm" autocomplete="off" class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 p-6 card rounded-2xl">
+<section class="w-full max-w-7xl mx-auto px-4 py-10 sm:py-16">
+  <h2 class="text-xl sm:text-2xl md:text-3xl font-bold mb-6 sm:mb-8">Lumpsum Inquiry</h2>
+  <form id="projectForm" autocomplete="off" class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 p-4 sm:p-6 card rounded-2xl">
     <div class="flex flex-col gap-4">
       <div>
         <label for="fullName">Full Name <sup>*</sup></label>
@@ -137,29 +171,29 @@
         <label for="referenceFile">Reference Type (Attachment)</label>
         <input type="file" id="referenceFile" name="referenceFile" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png,.zip" />
       </div>
-      <div class="flex justify-end mt-auto">
-        <button type="submit" class="button-primary px-8 py-3 rounded-full font-bold">Compose Email</button>
+      <div class="flex justify-center sm:justify-end mt-auto">
+        <button type="submit" class="button-primary px-8 py-3 rounded-full font-bold w-full sm:w-auto">Compose Email</button>
       </div>
     </div>
   </form>
 </section>
 
-<section class="w-full max-w-7xl mx-auto px-4 py-16">
-    <h2 class="text-2xl sm:text-3xl font-bold">ROI calculator</h2>
+<section class="w-full max-w-7xl mx-auto px-4 py-10 sm:py-16">
+    <h2 class="text-xl sm:text-2xl md:text-3xl font-bold mb-6 sm:mb-8">ROI calculator</h2>
     <div class="mt-6 grid md:grid-cols-2 gap-6">
         <div class="card rounded-2xl p-6">
             <div class="grid grid-cols-2 gap-4">
-                <label class="text-sm">
+                <label class="text-s">
                     <div class="mb-1 text-zinc-300">In-house rate ($/hr)</div>
                     <input type="number" id="inhouseRate" value="55" min="20" max="200" class="w-full rounded-xl border border-white/10 bg-black/30 px-3 py-2 text-white">
                     <input type="range" id="inhouseRateRange" value="55" min="20" max="200" class="mt-2 w-full accent-red-500">
                 </label>
-                <label class="text-sm">
+                <label class="text-s">
                     <div class="mb-1 text-zinc-300">Outsource rate ($/hr)</div>
                     <input type="number" id="outsourceRate" value="28" min="10" max="150" class="w-full rounded-xl border border-white/10 bg-black/30 px-3 py-2 text-white">
                     <input type="range" id="outsourceRateRange" value="28" min="10" max="150" class="mt-2 w-full accent-red-500">
                 </label>
-                <label class="text-sm col-span-2">
+                <label class="text-s col-span-2">
                     <div class="mb-1 text-zinc-300">Monthly hours</div>
                     <input type="number" id="monthlyHours" value="160" min="40" max="240" class="w-full rounded-xl border border-white/10 bg-black/30 px-3 py-2 text-white">
                     <input type="range" id="monthlyHoursRange" value="160" min="40" max="240" class="mt-2 w-full accent-red-500">
@@ -168,8 +202,8 @@
         </div>
 
         <div class="card rounded-2xl p-6">
-            <div class="grid grid-cols-2 gap-4 text-sm" id="roi-stats"></div>
-            <p class="mt-4 text-xs text-zinc-400">Estimates for comparison only, Not a final quotation.</p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-s" id="roi-stats"></div>
+            <p style="color: #fff;" class="mt-4 text-s text-zinc-400">This is an estimated data for comparison purpose only.</p>
         </div>
     </div>
 </section>
@@ -177,9 +211,7 @@
 <footer class="footer bg-black/80 border-t border-white/10">
     <div class="w-full max-w-7xl mx-auto px-4 py-6">    
         <div class="flex flex-col items-center justify-center gap-4">                                
-            <div class="flex gap-4 items-center">
-                
-                <!-- LinkedIn -->
+            <div class="flex gap-6 items-center">
                 <a href="https://www.linkedin.com/company/disruptive-designs/posts/?feedView=all"
                    target="_blank"
                    rel="noopener noreferrer"
@@ -187,152 +219,96 @@
                     <i class="fa-brands fa-linkedin-in"></i>
                 </a>
 
-                <!-- Email -->
                 <a href="https://mail.google.com/mail/?view=cm&fs=1&to=armughan@disruptive-designs.com&su=Inquiry%20from%20Website&body=Hi%20Armughan%2C%0A%0AI%20have%20a%20question%20about..."
                    target="_blank"
                    rel="noopener noreferrer"
                    class="text-white hover:text-red-400 transition-colors text-xl flex items-center justify-center">
                     <i class="fa-solid fa-envelope"></i>
                 </a>
-
             </div>           
         </div>
     </div>
 </footer>
 
-
 <script>
-    const pricing = {
-        hourly: [
-            { 
-                price: "$30–40", 
-                title: "Architectural Documentation", 
-                features: ["Permit Set", "Construction Documents", "Technical Drawings"], 
-                cta: "Start Your Project",
-                subject: "Inquiry Regarding Permit Set, Construction Documents, and Technical Drawings",
-                body: "Dear Armughan,\n\nI hope this message finds you well.\n\nI am reaching out to inquire about the availability and scope of your services related to:\n\n- Permit Set\n- Construction Documents\n- Technical Drawings\n\nCould you please provide details regarding the process, deliverables, timelines, and pricing for these services? Additionally, I would appreciate any sample documents or portfolios you may be able to share.\n\nLooking forward to your response.\n\nBest regards,"
-            },
-            { 
-                price: "$35–43", 
-                title: "BIM Modeler", 
-                features: ["LOD 300-350", "Families", "Coordination"], 
-                cta: "Start Your Project",
-                subject: "Inquiry Regarding BIM Modeling Services",
-                body: "Dear Armughan,\n\nI hope this email finds you well.\n\nI am reaching out to inquire about your BIM modeling services. Specifically, I would like to understand:\n\n- The scope of BIM modeling you provide (Revit, ArchiCAD, etc.)\n- Deliverables and file formats\n- Project timelines and availability\n- Pricing structure\n\nIf possible, please also share any sample models or portfolios showcasing your work.\n\nI look forward to your response and the possibility of collaborating.\n\nBest regards,"
-            },
-            { 
-                price: "$300–800", 
-                title: "3D Visualization (Per Project)", 
-                features: ["Number of views", "Types Of Render", "Project Based"], 
-                cta: "Start Your Project",
-                subject: "Inquiry About 3D Visualization Services",
-                body: "Dear Armughan,\n\nI hope this email finds you well.\n\nI am reaching out to inquire about your 3D visualization services. I am particularly interested in understanding:\n\n- The process and scope of your 3D rendering services (interior and exterior)\n- Deliverables and file formats\n- Pricing structure, keeping in mind that costs depend on the quantity and type of renders required\n- Project timelines and availability\n\nIf possible, please also share any sample renders or portfolios showcasing your previous work.\n\nLooking forward to your response.\n\nBest regards,"
-            }
-        ]
-    };
+    const pricing = { hourly: [
+        { price: "$30 – $40", title: "Architectural Documentation (AutoCad)", features: ["Permit Set", "Construction Documents", "Technical Drawings"], cta: "Start Your Project", subject: "Inquiry Regarding Permit Set, Construction Documents, and Technical Drawings", body: "Dear Armughan,\n\nI hope this message finds you well.\n\nI am reaching out to inquire about the availability and scope of your services related to:\n\n- Permit Set\n- Construction Documents\n- Technical Drawings\n\nCould you please provide details regarding the process, deliverables, timelines, and pricing for these services? Additionally, I would appreciate any sample documents or portfolios you may be able to share.\n\nLooking forward to your response.\n\nBest regards," },
+        { price: "$35 – $43", title: "BIM Model (Revit / ArchiCad)", features: ["LOD 300-350", "Families", "Cloud Coordination"], cta: "Start Your Project", subject: "Inquiry Regarding BIM Modeling Services", body: "Dear Armughan,\n\nI hope this email finds you well.\n\nI am reaching out to inquire about your BIM modeling services. Specifically, I would like to understand:\n\n- The scope of BIM modeling you provide (Revit, ArchiCAD, etc.)\n- Deliverables and file formats\n- Project timelines and availability\n- Pricing structure\n\nIf possible, please also share any sample models or portfolios showcasing your work.\n\nI look forward to your response and the possibility of collaborating.\n\nBest regards," },
+        { price: "$300 – $1500", title: "3D Visualization (Per Project)", features: ["Number of views", "Types Of Render", "Project Based"], cta: "Start Your Project", subject: "Inquiry About 3D Visualization Services", body: "Dear Armughan,\n\nI hope this email finds you well.\n\nI am reaching out to inquire about your 3D visualization services. I am particularly interested in understanding:\n\n- The process and scope of your 3D rendering services (interior and exterior)\n- Deliverables and file formats\n- Pricing structure, keeping in mind that costs depend on the quantity and type of renders required\n- Project timelines and availability\n\nIf possible, please also share any sample renders or portfolios showcasing your previous work.\n\nLooking forward to your response.\n\nBest regards," }
+    ]};
 
     function renderPricing() {
         const targetEmail = "armughan@disruptive-designs.com";
-
         document.getElementById('pricing-cards').innerHTML = pricing.hourly.map((plan, index) => {
             const mailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${targetEmail}&su=${encodeURIComponent(plan.subject)}&body=${encodeURIComponent(plan.body)}`;
-
-            // Sirf pehle 2 cards ke liye badge
-            const hourlyBadge = index < 2
-                ? `<span class="bg-red-500 text-white text-xs font-bold px-2 py-1 rounded uppercase ml-2">
-                        Hourly
-                   </span>`
-                : "";
-
-            return `
-                <div class="card rounded-2xl p-6 flex flex-col h-full">
-                    
-                    <div class="flex items-center">
-                        <div class="text-3xl font-extrabold text-white">${plan.price}</div>
-                        ${hourlyBadge}
-                    </div>
-
-                    <h3 class="text-lg font-semibold mt-2">${plan.title}</h3>
-
-                    <ul class="mt-4 space-y-2 text-sm text-zinc-300 flex-grow">
-                        ${plan.features.map(f => `
-                            <li class="flex items-start gap-2">
-                                <span class="icon">✔</span>${f}
-                            </li>
-                        `).join('')}
-                    </ul>
-
-                    <a href="${mailUrl}" target="_blank"
-                       class="button-primary mt-6 w-full inline-flex justify-center rounded-2xl px-5 py-2.5 text-sm font-semibold">
-                        ${plan.cta}
-                    </a>
-                </div>
-            `;
+            const hourlyBadge = index < 2 ? `<span class="bg-red-500 text-white text-s font-bold px-2 py-1 rounded uppercase ml-2">Hourly</span>` : "";
+            return `<div class="card rounded-2xl p-4 sm:p-6 flex flex-col h-full">
+                        <div class="flex items-center">
+                            <div class="text-2xl sm:text-3xl font-extrabold text-white">${plan.price}</div>${hourlyBadge}
+                        </div>
+                        <h3 class="text-lg font-semibold mt-2">${plan.title}</h3>
+                        <ul class="mt-4 space-y-2 text-s text-zinc-300 flex-grow">${plan.features.map(f => `<li class="flex items-start gap-2"><span class="icon">✔</span>${f}</li>`).join('')}</ul>
+                        <a href="${mailUrl}" target="_blank" class="button-primary mt-6 w-full inline-flex justify-center rounded-2xl px-5 py-2.5 text-s font-semibold">${plan.cta}</a>
+                    </div>`;
         }).join('');
     }
 
     function updateROIStats() {
-        const ih = +document.getElementById('inhouseRate').value;
-        const oh = +document.getElementById('outsourceRate').value;
-        const mh = +document.getElementById('monthlyHours').value;
-        
-        const inAnnual = ih * mh * 12;
-        const outAnnual = oh * mh * 12;
-        const savings = Math.max(0, inAnnual - outAnnual);
-        const savingPct = inAnnual ? Math.round((savings / inAnnual) * 100) : 0;
-        const f = new Intl.NumberFormat('en-US');
+    const ih = +document.getElementById('inhouseRate').value;
+    const oh = +document.getElementById('outsourceRate').value;
+    const mh = +document.getElementById('monthlyHours').value;
+    
+    const inAnnual = ih * mh * 12;
+    const outAnnual = oh * mh * 12;
+    const savings = Math.max(0, inAnnual - outAnnual);
+    const savingPct = inAnnual ? Math.round((savings / inAnnual) * 100) : 0;
+    
+    const f = new Intl.NumberFormat('en-US');
 
-        document.getElementById('roi-stats').innerHTML = `
-            <div class="card rounded-2xl p-4">
-                <div class="text-xs text-zinc-400">Annual in-house</div>
-                <div class="mt-1 text-xl font-bold">$${f.format(inAnnual)}</div>
-            </div>
-            <div class="card rounded-2xl p-4">
-                <div class="text-xs text-zinc-400">Annual outsourced</div>
-                <div class="mt-1 text-xl font-bold">$${f.format(outAnnual)}</div>
-            </div>
-            <div class="card rounded-2xl p-4">
-                <div class="text-xs text-green-400">Estimated savings</div>
-                <div class="mt-1 text-xl font-bold text-green-400">$${f.format(savings)}</div>
-            </div>
-            <div class="card rounded-2xl p-4">
-                <div class="text-xs text-green-400">Savings %</div>
-                <div class="mt-1 text-xl font-bold text-green-400">${savingPct}%</div>
-            </div>
-        `;
+    function getColor(value, defaultColor = '#fff') {
+        return value === 0 ? '#D43F34' : defaultColor;
     }
+
+    document.getElementById('roi-stats').innerHTML = `
+        <div class="card rounded-2xl p-4">
+            <div class="text-s text-zinc-400">Annual in-house</div>
+            <div class="mt-1 text-xl font-bold" style="color: ${getColor(inAnnual)}">$${f.format(inAnnual)}</div>
+        </div>
+        <div class="card rounded-2xl p-4">
+            <div class="text-s text-zinc-400">Annual outsourced</div>
+            <div class="mt-1 text-xl font-bold" style="color: ${getColor(outAnnual)}">$${f.format(outAnnual)}</div>
+        </div>
+        <div class="card rounded-2xl p-4">
+            <div class="text-s" style="color: ${getColor(savings, '#22c55e')}">Estimated savings</div>
+            <div class="mt-1 text-xl font-bold" style="color: ${getColor(savings, '#22c55e')}">$${f.format(savings)}</div>
+        </div>
+        <div class="card rounded-2xl p-4">
+            <div class="text-s" style="color: ${getColor(savingPct, '#22c55e')}">Savings %</div>
+            <div class="mt-1 text-xl font-bold" style="color: ${getColor(savingPct, '#22c55e')}">${savingPct}%</div>
+        </div>
+    `;
+}
 
     document.addEventListener('DOMContentLoaded', () => {
         renderPricing();
         updateROIStats();
-        ['inhouseRate', 'outsourceRate', 'monthlyHours'].forEach(id => {
+        ['inhouseRate','outsourceRate','monthlyHours'].forEach(id=>{
             const input = document.getElementById(id);
-            const range = document.getElementById(id + 'Range');
+            const range = document.getElementById(id+'Range');
             if(input) input.addEventListener('input', updateROIStats);
-            if(range) range.addEventListener('input', e => {
-                document.getElementById(id).value = e.target.value;
-                updateROIStats();
-            });
+            if(range) range.addEventListener('input', e=>{document.getElementById(id).value=e.target.value; updateROIStats();});
         });
 
         const projectForm = document.getElementById("projectForm");
-        if(projectForm) {
-            projectForm.addEventListener("submit", function (e) {
-                e.preventDefault();
-                const fullName = document.getElementById('fullName').value;
-                const userEmail = document.getElementById('email').value;
-                const projectSize = document.getElementById('projectSize').value;
-                const description = document.getElementById('projectDescription').value;
-                const targetEmail = "armughan@disruptive-designs.com";
-                const subject = encodeURIComponent(`LumpSum Project Inquiry`);
-                const body = encodeURIComponent(
-                    `Hi Armughan,\n\nYou have received a new project inquiry via the website form.\n\n` +
-                    `--- CLIENT DETAILS ---\nName: ${fullName}\nEmail: ${userEmail}\nProject Size: ${projectSize}\n\n` +
-                    `--- PROJECT DESCRIPTION ---\n${description}\n\nNote: If I selected a file, it is attached to this email.`
-                );
-                window.open(`https://mail.google.com/mail/?view=cm&fs=1&to=${targetEmail}&su=${subject}&body=${body}`, '_blank');
-            });
-        }
+        if(projectForm) projectForm.addEventListener("submit", function (e) {
+            e.preventDefault();
+            const fullName = document.getElementById('fullName').value;
+            const userEmail = document.getElementById('email').value;
+            const projectSize = document.getElementById('projectSize').value;
+            const description = document.getElementById('projectDescription').value;
+            const mailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=armughan@disruptive-designs.com&su=${encodeURIComponent("Project Inquiry from "+fullName)}&body=${encodeURIComponent(`Name: ${fullName}\nEmail: ${userEmail}\nProject Size: ${projectSize}\nDescription: ${description}`)}`;
+            window.open(mailUrl,"_blank");
+        });
     });
 </script>
 
