@@ -101,10 +101,7 @@
 </nav>
 
 <section class="w-full max-w-7xl mx-auto px-4 py-16">
-    <h2 class="text-2xl sm:text-3xl font-bold mb-8">Transparent Pricing</h2>
-    <span class="bg-red-500 text-white text-xs font-bold px-2 py-1 rounded uppercase">
-        Hourly
-    </span>
+    <h2 class="text-2xl sm:text-3xl font-bold mb-8">Transparent Pricing</h2>    
     <div class="mt-8 grid md:grid-cols-3 gap-6" id="pricing-cards"></div>
 </section>
 
@@ -225,8 +222,8 @@
             },
             { 
                 price: "$300–800", 
-                title: "3D Visualization", 
-                features: ["Number of views", "Type Of Render", "Project Based"], 
+                title: "3D Visualization (Per Project)", 
+                features: ["Number of views", "Types Of Render", "Project Based"], 
                 cta: "Start Your Project",
                 subject: "Inquiry About 3D Visualization Services",
                 body: "Dear Armughan,\n\nI hope this email finds you well.\n\nI am reaching out to inquire about your 3D visualization services. I am particularly interested in understanding:\n\n- The process and scope of your 3D rendering services (interior and exterior)\n- Deliverables and file formats\n- Pricing structure, keeping in mind that costs depend on the quantity and type of renders required\n- Project timelines and availability\n\nIf possible, please also share any sample renders or portfolios showcasing your previous work.\n\nLooking forward to your response.\n\nBest regards,"
@@ -236,17 +233,37 @@
 
     function renderPricing() {
         const targetEmail = "armughan@disruptive-designs.com";
-        document.getElementById('pricing-cards').innerHTML = pricing.hourly.map(plan => {
+
+        document.getElementById('pricing-cards').innerHTML = pricing.hourly.map((plan, index) => {
             const mailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${targetEmail}&su=${encodeURIComponent(plan.subject)}&body=${encodeURIComponent(plan.body)}`;
-            
+
+            // Sirf pehle 2 cards ke liye badge
+            const hourlyBadge = index < 2
+                ? `<span class="bg-red-500 text-white text-xs font-bold px-2 py-1 rounded uppercase ml-2">
+                        Hourly
+                   </span>`
+                : "";
+
             return `
                 <div class="card rounded-2xl p-6 flex flex-col h-full">
-                    <div class="text-3xl font-extrabold text-white">${plan.price}</div>
+                    
+                    <div class="flex items-center">
+                        <div class="text-3xl font-extrabold text-white">${plan.price}</div>
+                        ${hourlyBadge}
+                    </div>
+
                     <h3 class="text-lg font-semibold mt-2">${plan.title}</h3>
+
                     <ul class="mt-4 space-y-2 text-sm text-zinc-300 flex-grow">
-                        ${plan.features.map(f => `<li class="flex items-start gap-2"><span class="icon">✔</span>${f}</li>`).join('')}
+                        ${plan.features.map(f => `
+                            <li class="flex items-start gap-2">
+                                <span class="icon">✔</span>${f}
+                            </li>
+                        `).join('')}
                     </ul>
-                    <a href="${mailUrl}" target="_blank" class="button-primary mt-6 w-full inline-flex justify-center rounded-2xl px-5 py-2.5 text-sm font-semibold">
+
+                    <a href="${mailUrl}" target="_blank"
+                       class="button-primary mt-6 w-full inline-flex justify-center rounded-2xl px-5 py-2.5 text-sm font-semibold">
                         ${plan.cta}
                     </a>
                 </div>
@@ -307,7 +324,7 @@
                 const projectSize = document.getElementById('projectSize').value;
                 const description = document.getElementById('projectDescription').value;
                 const targetEmail = "armughan@disruptive-designs.com";
-                const subject = encodeURIComponent(`LumpSum Project Inquiry: ${fullName}`);
+                const subject = encodeURIComponent(`LumpSum Project Inquiry`);
                 const body = encodeURIComponent(
                     `Hi Armughan,\n\nYou have received a new project inquiry via the website form.\n\n` +
                     `--- CLIENT DETAILS ---\nName: ${fullName}\nEmail: ${userEmail}\nProject Size: ${projectSize}\n\n` +
