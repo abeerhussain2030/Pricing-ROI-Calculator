@@ -134,13 +134,13 @@
     </div>
 </nav>
 
-<section class="w-full max-w-7xl mx-auto px-4 py-10 sm:py-16">
-    <h2 class="text-xl sm:text-2xl md:text-3xl font-bold mb-6 sm:mb-8">Transparent Pricing</h2>    
+<section class="w-full max-w-7xl mx-auto px-4 pt-4 pb-10 sm:pt-6 sm:pb-16">
+    <h2 class="text-xl sm:text-2xl md:text-3xl font-bold mb-6 sm:mb-8">Cost breakdown</h2>    
     <div class="mt-8 grid md:grid-cols-3 gap-6" id="pricing-cards"></div>
 </section>
 
-<section class="w-full max-w-7xl mx-auto px-4 py-10 sm:py-16">
-  <h2 class="text-xl sm:text-2xl md:text-3xl font-bold mb-6 sm:mb-8">Lumpsum Inquiry</h2>
+<section class="w-full max-w-7xl mx-auto px-4 pt-2 pb-10 sm:pt-3 sm:pb-16">
+  <h2 class="text-xl sm:text-2xl md:text-3xl font-bold mb-6 sm:mb-8">Lump sum inquiry</h2>
   <form id="projectForm" autocomplete="off" class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 p-4 sm:p-6 card rounded-2xl">
     <div class="flex flex-col gap-4">
       <div>
@@ -162,15 +162,44 @@
       </div>
     </div>
 
-    <div class="flex flex-col gap-4">
+    <div class="flex flex-col gap-3">
       <div>
         <label for="projectDescription">Project Description <sup>*</sup></label>
-        <textarea id="projectDescription" name="projectDescription" placeholder="Describe your project" required rows="5"></textarea>
+        <textarea id="projectDescription" name="projectDescription" placeholder="Describe your project" required rows="3"></textarea>
       </div>
       <div>
-        <label for="referenceFile">Reference Type (Attachment)</label>
-        <input type="file" id="referenceFile" name="referenceFile" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png,.zip" />
-      </div>
+  <label for="projectDuration">Project Duration (Months) <sup>*</sup></label>
+
+  <div class="border border-white/20 bg-black/20 rounded-xl p-3">
+
+  <!-- Display selected month -->
+  <div id="formDurationDisplay" class="text-center text-white text-sm font-semibold mb-0 bg-white/10 rounded-lg py-1">
+    1 Month
+  </div>
+
+  <!-- Slider -->
+  <input
+    type="range"
+    id="formDurationSlider"
+    min="1"
+    max="5"
+    value="1"
+    step="1"
+    class="w-full h-3 accent-red-500 mb-2 rounded-lg"
+  />
+
+  <!-- Tick labels -->
+  <div class="flex justify-between text-xs text-zinc-400 px-1">
+    <span style="color: #fff;">1 Month</span>
+    <span  style="color: #fff;">2 Month</span>
+    <span  style="color: #fff;">3 Month</span>
+    <span  style="color: #fff;">4 Month</span>
+    <span  style="color: #fff;">4+ Month</span>
+  </div>
+
+</div>
+</div>
+
       <div class="flex justify-center sm:justify-end mt-auto">
         <button type="submit" class="button-primary px-8 py-3 rounded-full font-bold w-full sm:w-auto">Compose Email</button>
       </div>
@@ -178,35 +207,50 @@
   </form>
 </section>
 
-<section class="w-full max-w-7xl mx-auto px-4 py-10 sm:py-16">
-    <h2 class="text-xl sm:text-2xl md:text-3xl font-bold mb-6 sm:mb-8">ROI calculator</h2>
+
+<section class="w-full max-w-7xl mx-auto px-4 pt-4 pb-10 sm:pt-6 sm:pb-16">
+    <h2 class="text-xl sm:text-2xl md:text-3xl font-bold mb-6 sm:mb-8">
+        ROI calculator
+    </h2>
+
     <div class="mt-6 grid md:grid-cols-2 gap-6">
         <div class="card rounded-2xl p-6">
             <div class="grid grid-cols-2 gap-4">
                 <label class="text-s">
                     <div class="mb-1 text-zinc-300">In-house rate ($/hr)</div>
-                    <input type="number" id="inhouseRate" value="55" min="20" max="200" class="w-full rounded-xl border border-white/10 bg-black/30 px-3 py-2 text-white">
-                    <input type="range" id="inhouseRateRange" value="55" min="20" max="200" class="mt-2 w-full accent-red-500">
+                    <input type="number" id="inhouseRate" value="55" min="20" max="200"
+                        class="w-full rounded-xl border border-white/10 bg-black/30 px-3 py-2 text-white">
+                    <input type="range" id="inhouseRateRange" value="55" min="20" max="200"
+                        class="mt-2 w-full accent-red-500">
                 </label>
+
                 <label class="text-s">
                     <div class="mb-1 text-zinc-300">Outsource rate ($/hr)</div>
-                    <input type="number" id="outsourceRate" value="28" min="10" max="150" class="w-full rounded-xl border border-white/10 bg-black/30 px-3 py-2 text-white">
-                    <input type="range" id="outsourceRateRange" value="28" min="10" max="150" class="mt-2 w-full accent-red-500">
+                    <input type="number" id="outsourceRate" value="28" min="10" max="150"
+                        class="w-full rounded-xl border border-white/10 bg-black/30 px-3 py-2 text-white">
+                    <input type="range" id="outsourceRateRange" value="28" min="10" max="150"
+                        class="mt-2 w-full accent-red-500">
                 </label>
+
                 <label class="text-s col-span-2">
                     <div class="mb-1 text-zinc-300">Monthly hours</div>
-                    <input type="number" id="monthlyHours" value="160" min="40" max="240" class="w-full rounded-xl border border-white/10 bg-black/30 px-3 py-2 text-white">
-                    <input type="range" id="monthlyHoursRange" value="160" min="40" max="240" class="mt-2 w-full accent-red-500">
+                    <input type="number" id="monthlyHours" value="160" min="40" max="240"
+                        class="w-full rounded-xl border border-white/10 bg-black/30 px-3 py-2 text-white">
+                    <input type="range" id="monthlyHoursRange" value="160" min="40" max="240"
+                        class="mt-2 w-full accent-red-500">
                 </label>
             </div>
         </div>
 
         <div class="card rounded-2xl p-6">
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-s" id="roi-stats"></div>
-            <p style="color: #fff;" class="mt-4 text-s text-zinc-400">This is an estimated data for comparison purpose only.</p>
+            <p style="color: #fff;" class="mt-4 text-s text-zinc-400">
+                This is an estimated data for comparison purpose only.
+            </p>
         </div>
     </div>
 </section>
+
 
 <footer class="footer bg-black/80 border-t border-white/10">
     <div class="w-full max-w-7xl mx-auto px-4 py-6">    
@@ -232,9 +276,9 @@
 
 <script>
     const pricing = { hourly: [
-        { price: "$30 – $40", title: "Architectural Documentation (AutoCad)", features: ["Permit Set", "Construction Documents", "Technical Drawings"], cta: "Start Your Project", subject: "Inquiry Regarding Permit Set, Construction Documents, and Technical Drawings", body: "Dear Armughan,\n\nI hope this message finds you well.\n\nI am reaching out to inquire about the availability and scope of your services related to:\n\n- Permit Set\n- Construction Documents\n- Technical Drawings\n\nCould you please provide details regarding the process, deliverables, timelines, and pricing for these services? Additionally, I would appreciate any sample documents or portfolios you may be able to share.\n\nLooking forward to your response.\n\nBest regards," },
-        { price: "$35 – $43", title: "BIM Model (Revit / ArchiCad)", features: ["LOD 300-350", "Families", "Cloud Coordination"], cta: "Start Your Project", subject: "Inquiry Regarding BIM Modeling Services", body: "Dear Armughan,\n\nI hope this email finds you well.\n\nI am reaching out to inquire about your BIM modeling services. Specifically, I would like to understand:\n\n- The scope of BIM modeling you provide (Revit, ArchiCAD, etc.)\n- Deliverables and file formats\n- Project timelines and availability\n- Pricing structure\n\nIf possible, please also share any sample models or portfolios showcasing your work.\n\nI look forward to your response and the possibility of collaborating.\n\nBest regards," },
-        { price: "$300 – $1500", title: "3D Visualization (Per Project)", features: ["Number of views", "Types Of Render", "Project Based"], cta: "Start Your Project", subject: "Inquiry About 3D Visualization Services", body: "Dear Armughan,\n\nI hope this email finds you well.\n\nI am reaching out to inquire about your 3D visualization services. I am particularly interested in understanding:\n\n- The process and scope of your 3D rendering services (interior and exterior)\n- Deliverables and file formats\n- Pricing structure, keeping in mind that costs depend on the quantity and type of renders required\n- Project timelines and availability\n\nIf possible, please also share any sample renders or portfolios showcasing your previous work.\n\nLooking forward to your response.\n\nBest regards," }
+        { price: "$30 – $40", title: "Architectural Documentation (AutoCAD)", features: ["Reliable CAD Support & Conversion","Design-Ready Architectural Drawings", "Construction Documents" ], cta: "Start Your Project", subject: "Inquiry Regarding Reliable CAD Support & Conversion, Design-Ready Architectural Drawings, and Construction Documents", body: "Dear Armughan,\n\nI hope this message finds you well.\n\nI am reaching out to inquire about the availability and scope of your services related to:\n\n- Reliable CAD Support & Conversion\n- Design-Ready Architectural Drawings\n- Construction Documents\n\nCould you please provide details regarding the process, deliverables, timelines, and pricing for these services? Additionally, I would appreciate any sample documents or portfolios you may be able to share.\n\nLooking forward to your response.\n\nBest regards," },
+        { price: "$35 – $43", title: "BIM Model (Revit / ArchiCAD)", features: ["LOD 300-350", "Families", "Cloud Coordination"], cta: "Start Your Project", subject: "Inquiry Regarding BIM Modeling Services", body: "Dear Armughan,\n\nI hope this email finds you well.\n\nI am reaching out to inquire about your BIM modeling services. Specifically, I would like to understand:\n\n- The scope of BIM modeling you provide (Revit, ArchiCAD, etc.)\n- Deliverables and file formats\n- Project timelines and availability\n- Pricing structure\n\nIf possible, please also share any sample models or portfolios showcasing your work.\n\nI look forward to your response and the possibility of collaborating.\n\nBest regards," },
+        { price: "$300 – $1500", title: "3D Visualization (Per view)", features: ["Render type (Interior / Exterior)", "3D modeling required (Yes / No)", "Project Size"], cta: "Start Your Project", subject: "Inquiry About 3D Visualization Services", body: "Dear Armughan,\n\nI hope this email finds you well.\n\nI am reaching out to inquire about your 3D visualization services. I am particularly interested in understanding:\n\n- The process and scope of your 3D rendering services (interior and exterior)\n- Deliverables and file formats\n- Pricing structure, keeping in mind that costs depend on the quantity and type of renders required\n- Project timelines and availability\n\nIf possible, please also share any sample renders or portfolios showcasing your previous work.\n\nLooking forward to your response.\n\nBest regards," }
     ]};
 
     function renderPricing() {
@@ -292,6 +336,15 @@
     document.addEventListener('DOMContentLoaded', () => {
         renderPricing();
         updateROIStats();
+        
+        // Inquiry Form Slider Display Logic
+        const formSlider = document.getElementById('formDurationSlider');
+        const formDisplay = document.getElementById('formDurationDisplay');
+        formSlider.addEventListener('input', (e) => {
+            const val = parseInt(e.target.value);
+            formDisplay.innerText = val === 5 ? "More than 4 Months" : val + (val === 1 ? " Month" : " Months");
+        });
+
         ['inhouseRate','outsourceRate','monthlyHours'].forEach(id=>{
             const input = document.getElementById(id);
             const range = document.getElementById(id+'Range');
@@ -306,7 +359,14 @@
             const userEmail = document.getElementById('email').value;
             const projectSize = document.getElementById('projectSize').value;
             const description = document.getElementById('projectDescription').value;
-            const mailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=armughan@disruptive-designs.com&su=${encodeURIComponent("Project Inquiry from "+fullName)}&body=${encodeURIComponent(`Name: ${fullName}\nEmail: ${userEmail}\nProject Size: ${projectSize}\nDescription: ${description}`)}`;
+            
+            // Duration logic for email draft
+            const durationVal = parseInt(formSlider.value);
+            const durationText = durationVal === 5 ? "More than 4 months" : durationVal + " month(s)";
+
+            const emailBody = `Hi Armughan,\n\nThis is ${fullName}. I would like to inquire about your scope of services with regards to our project.\n\nDetails are as follows:\n• Duration of project is around ${durationText}\n• Scale of project is between (${projectSize}).\n\n${description}\n\nAlso, a sample is attached for a more precise cost estimate.\n\nFor further details, we can communicate through (${userEmail}).`;
+
+            const mailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=armughan@disruptive-designs.com&su=${encodeURIComponent("Project Inquiry from "+fullName)}&body=${encodeURIComponent(emailBody)}`;
             window.open(mailUrl,"_blank");
         });
     });
