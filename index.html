@@ -156,26 +156,26 @@
         <label for="projectSize">Project Size <sup>*</sup></label>
         <select id="projectSize" name="projectSize" required>
           <option style="color: #0b0c10;background-color: #fff;" value="" disabled selected>Select an option</option>
-          <option style="color: #0b0c10;background-color: #fff;" value="0 - 3000 SQFT">0 - 3000 SQFT</option>
-          <option style="color: #0b0c10;background-color: #fff;" value="3000 - 10,000 SQFT">3000 - 10,000 SQFT</option>
-          <option style="color: #0b0c10;background-color: #fff;" value="+10,000 SQFT">+10,000 SQFT</option>
+          <option style="color: #0b0c10;background-color: #fff;" value="0 - 3000 SQFT">0 - 3000 Sq.Ft.</option>
+          <option style="color: #0b0c10;background-color: #fff;" value="3000 - 10,000 SQFT">3000 - 10,000 Sq.Ft.</option>
+          <option style="color: #0b0c10;background-color: #fff;" value="+10,000 SQFT">+10,000 Sq.Ft.</option>
         </select>
       </div>  
       <div>
         <label for="projectDetail">Project Detail <sup>*</sup></label>
         <select id="projectDetail" name="projectDetail" required>
           <option style="color: #0b0c10;background-color: #fff;" value="" disabled selected>Select an option</option>
-          <option style="color: #0b0c10;background-color: #fff;" value="RETAIL">RETAIL</option>
-          <option style="color: #0b0c10;background-color: #fff;" value="HOSPITALITY">HOSPITALITY</option>
-          <option style="color: #0b0c10;background-color: #fff;" value="OFFICE">OFFICE</option>
-          <option style="color: #0b0c10;background-color: #fff;" value="EDUCATIONAL">EDUCATIONAL</option>
-          <option style="color: #0b0c10;background-color: #fff;" value="RESIDENTIAL">RESIDENTIAL</option>
-          <option style="color: #0b0c10;background-color: #fff;" value="LANDSCAPE">LANDSCAPE</option>
-          <option style="color: #0b0c10;background-color: #fff;" value="MASTER-PLANNING">MASTER-PLANNING</option>
-          <option style="color: #0b0c10;background-color: #fff;" value="OTHER">OTHER</option>
+          <option style="color: #0b0c10;background-color: #fff;" value="Retail">Retail</option>
+          <option style="color: #0b0c10;background-color: #fff;" value="Hospitality">Hospitality</option>
+          <option style="color: #0b0c10;background-color: #fff;" value="Office">Office</option>
+          <option style="color: #0b0c10;background-color: #fff;" value="Educational">Educational</option>
+          <option style="color: #0b0c10;background-color: #fff;" value="Residential">Residential</option>
+          <option style="color: #0b0c10;background-color: #fff;" value="Landscape">Landscape</option>
+          <option style="color: #0b0c10;background-color: #fff;" value="Master Planning">Master Planning</option>
+          <option style="color: #0b0c10;background-color: #fff;" value="Other">Other</option>
         </select>
         <p style="color: #fff;" class="mt-4 text-s text-zinc-400">
-       <sup>* </sup>Feel free to attach a sample in email for a more precise cost estimate.
+       <sup>* </sup>Feel free to attach a sample set in draft email for a more precise cost estimate.
       </p> 
       </div>             
     </div>
@@ -186,7 +186,7 @@
         <textarea id="projectDescription" name="projectDescription" placeholder="Describe your project" required rows="8" style="height: 207px;"></textarea>
       </div>
       <div>
-  <label for="projectDuration">Project Duration (Months) <sup>*</sup></label>
+  <label for="projectDuration">Project Duration <sup>*</sup></label>
 
   <div class="border border-white/20 bg-black/20 rounded-xl p-3">
 
@@ -206,15 +206,15 @@
 
   <div class="flex justify-between text-xs text-zinc-400 px-1">
     <span style="color: #fff;">1 Month</span>
-    <span  style="color: #fff;">2 Month</span>
-    <span  style="color: #fff;">3 Month</span>
-    <span  style="color: #fff;">4 Month</span>
-    <span  style="color: #fff;">4+ Month</span>
+    <span  style="color: #fff;">2 Months</span>
+    <span  style="color: #fff;">3 Months</span>
+    <span  style="color: #fff;">4 Months</span>
+    <span  style="color: #fff;">4+ Months</span>
   </div>
 </div>
 </div>
       <div class="flex justify-center sm:justify-end mt-auto">
-        <button type="submit" class="button-primary px-8 py-3 rounded-full font-bold w-full sm:w-auto">Compose Email</button>
+        <button type="submit" class="button-primary px-8 py-3 rounded-full font-bold w-full sm:w-auto">Draft Email</button>
       </div>
     </div>
   </form>
@@ -254,9 +254,9 @@
                 </label>
 
                 <label class="text-s">
-                    <div class="mb-1 text-zinc-300">Monthly hours</div>
+                    <div class="mb-1 text-zinc-300">Monthly hours (approx.)</div>
                     <input type="text" id="monthlyHoursDisplay" value="160" disabled
-                       style="color: #22C55E;" class="w-full rounded-xl border border-white/10 bg-black/10 px-3 py-2 text-zinc-400 font-bold cursor-not-allowed">
+                       style="color:#898989;" class="w-full rounded-xl border border-white/10 bg-black/10 px-3 py-2 text-zinc-400 font-bold cursor-not-allowed">
                     
                 </label>
                 
@@ -266,7 +266,7 @@
         <div class="card rounded-2xl p-6">
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-s" id="roi-stats"></div>
             <p style="color: #fff;" class="mt-4 text-s text-zinc-400">
-                 <sup>* </sup>This is an estimated data for comparison purpose only.
+                 <sup>* </sup>This is an estimated data for comparison purposes only.
             </p>
         </div>
     </div>
@@ -299,7 +299,7 @@
     const pricing = { hourly: [
         { price: "$30 – $40", title: "Architectural Documentation (AutoCAD)", features: ["Experienced Support Team with Licensed Software","Technical Drawings", "Permit Set / Construction Documents" ], cta: "Start Your Project", subject: "Inquiry Regarding Experienced Support Team with Licensed Software,Technical Drawings,Permit Set / Construction Documents", body: "Dear Armughan,\n\nI hope this message finds you well.\n\nI am reaching out to inquire about the availability and scope of your services related to:\n\n- Reliable CAD Support & Conversion\n- Design-Ready Architectural Drawings\n- Construction Documents\n\nCould you please provide details regarding the process, deliverables, timelines, and pricing for these services? Additionally, I would appreciate any sample documents or portfolios you may be able to share.\n\nLooking forward to your response.\n\nBest regards," },
         { price: "$35 – $43", title: "BIM Model (Revit / ArchiCAD)", features: ["Experienced Support Team with Licensed Software", "Cloud Coordination", "LOD 300-350 (Architectural)"], cta: "Start Your Project", subject: "Inquiry Regarding BIM Modeling Services", body: "Dear Armughan,\n\nI hope this email finds you well.\n\nI am reaching out to inquire about your BIM modeling services. Specifically, I would like to understand:\n\n- The scope of BIM modeling you provide (Revit, ArchiCAD, etc.)\n- Deliverables and file formats\n- Project timelines and availability\n- Pricing structure\n\nIf possible, please also share any sample models or portfolios showcasing your work.\n\nI look forward to your response and the possibility of collaborating.\n\nBest regards," },
-        { price: "$300 – $1500", title: "3D Visualization (Per view)", features: ["Experienced Support Team with Licensed Software","Photorealistic Renderings", "Lumion, Twin motion, etc"], cta: "Start Your Project", subject: "Inquiry About 3D Visualization Services", body: "Dear Armughan,\n\nI hope this email finds you well.\n\nI am reaching out to inquire about your 3D visualization services. I am particularly interested in understanding:\n\n- The process and scope of your 3D rendering services (interior and exterior)\n- Deliverables and file formats\n- Pricing structure, keeping in mind that costs depend on the quantity and type of renders required\n- Project timelines and availability\n\nIf possible, please also share any sample renders or portfolios showcasing your previous work.\n\nLooking forward to your response.\n\nBest regards," }
+        { price: "$300 – $1500", title: "3D Visualization (Per view)", features: ["Experienced Support Team with Licensed Software","Photorealistic Renderings", "Lumion, Twin motion, Enscape, etc"], cta: "Start Your Project", subject: "Inquiry About 3D Visualization Services", body: "Dear Armughan,\n\nI hope this email finds you well.\n\nI am reaching out to inquire about your 3D visualization services. I am particularly interested in understanding:\n\n- The process and scope of your 3D rendering services (interior and exterior)\n- Deliverables and file formats\n- Pricing structure, keeping in mind that costs depend on the quantity and type of renders required\n- Project timelines and availability\n\nIf possible, please also share any sample renders or portfolios showcasing your previous work.\n\nLooking forward to your response.\n\nBest regards," }
     ]};
 
     function renderPricing() {
